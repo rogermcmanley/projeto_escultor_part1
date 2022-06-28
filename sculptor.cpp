@@ -108,23 +108,6 @@ void Sculptor::putEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int r
     }
 }
 
-void Sculptor::cutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz){
-   double newx, newy, newz;
-
-    for (int x = 0; x < nx; x++){
-        for (int y = 0; y < ny; y++){
-            for (int z = 0; z < nz; z++){
-            newx = ((float)(x-xcenter)*(float)(x-xcenter))/(rx * rx);
-            newy = ((float)(y-ycenter)*(float)(y-ycenter))/(ry * ry);
-            newz = ((float)(z-zcenter)*(float)(z-zcenter))/(rz * rz);
-
-            if ((newx + newy + newz) < 1){
-                cutVoxel(x,y,z);
-            }
-            }
-        }
-    }
-}
 void Sculptor::putSphere(int xcenter, int ycenter, int zcenter, int radius){
   for(int i = -radius; i<=radius; i++){
       for(int j = -radius; j<=radius; j++){
