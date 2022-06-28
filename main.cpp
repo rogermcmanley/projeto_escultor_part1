@@ -279,7 +279,7 @@ int main(){
   porco.putBox(19,22,15,16,12,15);
 
   
-  porco.writeOFF("porco.off");
+  porco.writeOFF((char*)"porco.off");
 
   return 0;
 }
